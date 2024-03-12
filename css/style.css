@@ -1,0 +1,360 @@
+body {
+  background-color: rgba(214, 211, 211, 0.144);
+}
+
+.cajas {
+  margin-top: 1%;
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.cajas .accordion {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  width: 700px;
+  margin: 0px auto;
+  color: black;
+  padding: 45px 45px;
+}
+.cajas .accordion .container {
+  justify-content: center;
+  background-color: white;
+  justify-items: space-evenly;
+  border-radius: 5px;
+  position: relative;
+  width: 600px;
+  margin: 10px 0px 10px 0px;
+}
+.cajas .accordion .container .label {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 1% 5% 0% 0%;
+  padding: 10px 10px 10px 10px;
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+}
+.cajas .accordion .container .label :before {
+  color: black;
+  margin-right: 5%;
+  margin-top: 1%;
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  font-size: 30px;
+  transform: translateY(-50%);
+}
+.cajas .accordion .container .content {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 0% 2% 2% 0%;
+  padding: 0%;
+  height: 0;
+  font-size: 20px;
+  text-align: justify;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.cajas .atrasContinuar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.cajas .atrasContinuar .cta {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  align-items: center;
+  margin: 1% 1% 1% 0%;
+  background-color: rgba(0, 0, 0, 0.8235294118);
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+.cajas .atrasContinuar .cta a {
+  text-align: center;
+}
+.cajas .accordion .container.active .content {
+  height: 150px;
+}
+
+header .navegador {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.832);
+  flex-direction: row;
+  justify-content: center;
+}
+header .navegador .logo {
+  display: flex;
+  align-content: center;
+  padding: 0%;
+}
+header .navegador .nav {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: center;
+  padding-top: 1%;
+}
+header .navegador .nav ul {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+header .navegador .nav ul a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 1%;
+}
+header .navegador .nav ul :hover {
+  color: rgb(164, 221, 138);
+}
+
+.navegadorRecetas {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1% 0% 0% 0%;
+}
+.navegadorRecetas .listaRecetas {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  justify-content: center;
+  align-content: center;
+  margin: 0%;
+  padding: 0%;
+}
+.navegadorRecetas .listaRecetas button {
+  width: 12vh;
+  padding: 1% 0% 0% 0%;
+  margin: 1%;
+  background-color: rgba(129, 198, 247, 0.186);
+  border: none;
+  border-radius: 5px;
+}
+.navegadorRecetas .listaRecetas button p {
+  font-size: 12px;
+}
+.navegadorRecetas .listaRecetas button a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  padding: 0% 0% 0% 0%;
+}
+.navegadorRecetas .listaRecetas button :hover {
+  color: black;
+}
+.navegadorRecetas .listaRecetas button:hover {
+  background-color: rgba(200, 213, 248, 0.638);
+  transform: scale(1.2);
+}
+.navegadorRecetas .listaRecetas button:hover a {
+  margin-right: 2%;
+}
+
+footer .footer {
+  background-color: black;
+}
+footer .footer h1 {
+  color: white;
+}
+
+.recetasGrid {
+  display: flex;
+  flex-direction: column;
+}
+
+.recetas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 0% 0% 0% 0%;
+}
+.recetas .cartaRecetas {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  background-color: white;
+  margin: 1%;
+  padding: 0%;
+  border-radius: 5px;
+}
+.recetas .cartaRecetas:hover {
+  box-shadow: 7px 7px 12px 0 rgba(20, 20, 20, 0.3);
+}
+.recetas .cartaRecetas h3 {
+  text-align: center;
+  width: 50%;
+  margin: -5% 1% 1% 5%;
+  background-color: white;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 1%;
+}
+.recetas .cartaRecetas .imgRecetas img {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: black;
+  width: 400px;
+  height: 400px;
+  padding: auto;
+  margin: 0%;
+  border-radius: 5px 5px 0px 0px;
+}
+.recetas .cartaRecetas .imgRecetas img img:hover {
+  background-color: rgb(0, 0, 0);
+}
+.recetas .cardRecetas {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+.recetas .cardRecetas .formularioCardRecetas {
+  display: flex;
+  flex-direction: row;
+  margin: 0% 1% 1% 1%;
+  width: 100%;
+}
+.recetas .cardRecetas .formularioCardRecetas label {
+  font-size: 18px;
+  margin-left: 1%;
+  padding-right: 2%;
+}
+.recetas .cardRecetas .formularioCardRecetas select {
+  width: 40px;
+  height: 20px;
+}
+.recetas .cardRecetas .formularioCardRecetas .option {
+  text-align: center;
+  width: 50px;
+  height: 30px;
+}
+.recetas .cardRecetas .cta {
+  display: flex;
+  justify-items: center;
+  text-align: center;
+  margin: 0% 2% 2% 2%;
+  padding: 0%;
+}
+.recetas .cardRecetas .cta button {
+  margin: 1% 1% 1% 1%;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color: rgb(43, 191, 55);
+  border: none;
+  padding: 0%;
+  color: white;
+}
+.recetas .cardRecetas .cta button:hover {
+  background-color: rgb(7, 158, 20);
+}
+
+.indexGrid .bannerIndex {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.indexGrid .portadaIndex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+}
+.indexGrid .portadaIndex .titulo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 1%;
+}
+.indexGrid .portadaIndex .titulo h1 {
+  font-size: 40px;
+  max-width: 100%;
+  text-align: center;
+}
+.indexGrid .portadaIndex .titulo .cta {
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  align-items: center;
+  background-color: rgba(216, 84, 84, 0.8235294118);
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+.indexGrid .portadaIndex .imgPortada {
+  width: 80%;
+  padding: 1.5%;
+}
+.indexGrid .portadaIndex .imgPortada img {
+  max-width: 100%;
+}
+.indexGrid .tiraDeImagenes {
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.indexGrid .tiraDeImagenes img {
+  width: 100%;
+  margin: 0.2%;
+}
+
+.direccionGrid .cajasDireccion {
+  display: flex;
+  flex-direction: column;
+  background-color: yellow;
+  text-align: center;
+}
+.direccionGrid .cajasDireccion .direccionEnvio {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+}
+
+* body {
+  background-color: rgba(214, 211, 211, 0.484);
+  margin: 0%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li {
+  list-style-type: none;
+}
+
+/*# sourceMappingURL=style.css.map */

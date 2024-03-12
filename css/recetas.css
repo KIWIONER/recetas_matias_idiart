@@ -1,0 +1,26 @@
+#productos-container{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    padding: 20px;
+    justify-content: space-evenly;
+    text-align:center;
+    
+}
+.tarjeta-producto{
+    max-width:100%;
+    align-content:center;
+    border-radius: 3%;
+    border: solid 2px black;
+    padding:2%;
+}
+.tarjeta-producto img{
+    width:100%;
+}
+.tarjeta-producto button{
+    background-color: black;
+    color:white;
+    border: none;
+    padding:3%;
+    border-radius: 5px;
+}

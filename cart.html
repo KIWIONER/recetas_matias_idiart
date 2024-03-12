@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/cart.js" defer></script>
+    <link rel="stylesheet" href="css/cart.css"/>
+    
+</head>
+<body>
+    <header>
+        <section>   
+            <nav class="navegador shadow">
+                <article class="logo">
+                    <img src="../images/doodle kiwi transparent.png" width="120px">
+                </article>
+                <article class="nav">
+                    <ul>
+                        <a href="recetas.html">Recetas</a>
+                        <a href="#">Cart</a>
+                    </ul>
+                </article>
+                <article class=" carrito p-2 m-1">
+                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <img src="../images/carrito1.png" id="imagenCarrito" width="40px" height="40px"><span id="cuentaCarrito">0</span>
+                        <span id="carritoContador">0</span>
+                    </button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class=" col-8offcanvas-body">
+                        Carrito<!--AQUI SE PONE LA ESTRUCTURA DEL CARRITO DE COMPRA-->
+                        </div>
+                    </div>
+                </article>
+            </nav>
+        </section> 
+    </header> 
+    <main>
+        <p id="carrito-vacio">El carrito está vacio, <a href="recetas.html">Elgie algún producto</a></p>
+        <section id="cart-container">
+        </section>
+        <section id="totales">
+            <p>total unidades:<span id="unidades">0</span></p>
+            <p>Total precio:€ <span id="precio">0</span></p>
+            <button disabled>Comprar</button>
+            <button id="reiniciar">Reiniciar carrito</button>
+        </section>
+</body>
+</html>
