@@ -1,10 +1,10 @@
-const cuentaCarritoElement = document.getElelementById('cuenta-carrito');
+const cuentaCarritoElement = document.getElementById('cuenta-carrito');
 
 
 //Toma un objeto producto o un objeto con al menos un id y lo agrega al carrito
 function agregarAlCarrito(producto){
     //reviso si el producto está en el carrito
-    const memoria = JSON.parse(localStorage.getItem('recetas'));
+    let memoria = JSON.parse(localStorage.getItem('recetas'));
     let cantidadProductoFinal;
     //si no hay localStorage lo creo;
     if(!memoria || memoria.length === 0){
@@ -17,7 +17,7 @@ function agregarAlCarrito(producto){
         const indiceProducto = memoria.findIndex(receta => receta.id === producto.id)
         const nuevaMemoria = memoria;
         if(indiceProducto === -1){
-            const nuevoProducto = getNuevoProductoParaMemoria(producto)
+            const nuevoProducto = getNuevoProductoParaMemoria(producto);
             nuevaMemoria.push(nuevoProducto);
             cantidadProductoFinal = 1;
             //localStorage.setItem('recetas',JSON.stringify(nuevaMemoria));
@@ -34,7 +34,7 @@ function agregarAlCarrito(producto){
 
 //Resta una unidad de un producto al carrito
 function restarAlCarrito(producto){
-    let memoria= JSON.parse(localStorage.getItem('recetas'));
+    let memoria = JSON.parse(localStorage.getItem('recetas'));
     let cantidadProductoFinal = 0;
     const indiceProducto = memoria.findIndex(receta => receta.id === producto.id)
     let nuevaMemoria = memoria;
@@ -57,18 +57,17 @@ function getNuevoProductoParaMemoria(producto){
 
 //Actualiza el numero del carrito del header
 function actualizarNumeroCarrito(){
-    let cuenta= 0;
+    let cuenta = 0;
     const memoria= JSON.parse(localStorage.getItem('recetas'));
-    if(memoria&&memoria.length >0){
-        cuenta= memoria.reduce((acum,current)=>acum+current.cantidad,0)
+    if(memoria && memoria.length > 0){
+        cuenta = memoria.reduce((acum,current)=>acum+current.cantidad,0)
         return cuentaCarritoElement.innerText = cuenta;
     }
-    cuentaCarritoElement.innertText = 0;
+    cuentaCarritoElement.innerText = 0;
 }
+
 function reiniciarCarrito(){
     localStorage.removeItem('recetas');
-    actualizarNumeroCarrito()
+    actualizarNumeroCarrito();
 }
-
-
 actualizarNumeroCarrito();

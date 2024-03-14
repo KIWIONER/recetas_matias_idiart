@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css"/>
-    <script src="js/cart.js" defer></script>
     <link rel="stylesheet" href="css/cart.css"/>
-    
+    <script src="js/recetas.js"></script>
+    <script src="js/cartService.js" defer></script>
+    <script src="js/cart.js" defer></script>
 </head>
 <body>
     <header>
@@ -24,8 +25,8 @@
                 </article>
                 <article class=" carrito p-2 m-1">
                     <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                        <img src="../images/carrito1.png" id="imagenCarrito" width="40px" height="40px"><span id="cuentaCarrito">0</span>
-                        <span id="carritoContador">0</span>
+                        <img src="../images/carrito1.png" id="imagenCarrito" width="40px" height="40px"><span id="cuenta-carrito">0</span>
+                        
                     </button>
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                         <div class="offcanvas-header">
@@ -45,9 +46,9 @@
         <section id="cart-container">
         </section>
         <section id="totales">
-            <p>total unidades:<span id="unidades">0</span></p>
+            <p>total unidades:<span id="cantidad">0</span></p>
             <p>Total precio:€ <span id="precio">0</span></p>
-            <button disabled>Comprar</button>
+            <button>Comprar</button>
             <button id="reiniciar">Reiniciar carrito</button>
         </section>
 </body>

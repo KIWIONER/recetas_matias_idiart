@@ -1,19 +1,16 @@
 const contenedorTarjetas = document.getElementById('cart-container');
 const cantidadElement = document.getElementById('cantidad');
 const precioElement = document.getElementById('precio');
-const carritoVaciolEment= document.getElementById('carrito-vacio');
+const carritoVacioElement= document.getElementById('carrito-vacio');
 const totalesContainer= document.getElementById('totales'); 
 
 //crea las tarjetas de productos teniendo en cuenta lo guardado en el localStorage
 function crearTarjetasProductosCarrito(){
     contenedorTarjetas.innerHTML='';
     const productos = JSON.parse(localStorage.getItem('recetas'));
-    console.log(productos);
     if(productos && productos.length>0){
-
-    
-    productos.forEach(producto => {
-        const nuevaReceta= document.createElement('div');
+    productos.forEach((producto) => {
+        const nuevaReceta = document.createElement('div');
         nuevaReceta.classList = 'tarjeta-producto';
         nuevaReceta.innerHTML = `
         <img src='${producto.img}'>
@@ -21,25 +18,26 @@ function crearTarjetasProductosCarrito(){
         <p>${producto.precio}€</p>
         <div>
             <button>-</button>
-            <span class ="cantidad">0</span>
+            <span class ="cantidad">${producto.cantidad}</span>
             <button>+</button>
         </div>
         `;
         contenedorTarjetas.appendChild(nuevaReceta)
-        nuevaReceta.getElementsByTagName('button')[0].addEventListener('click',(e)=>{
+        nuevaReceta.getElementsByTagName('button')[0]
+        .addEventListener('click',(e)=>{
             const cantidadElement = e.target.parentElement.getElementsByClassName("cantidad")[0];
             cantidadElement.innerText = restarAlCarrito(producto);
             crearTarjetasProductosCarrito();
             actualizarTotales();
-    });
+        });
     nuevaReceta
     .getElementsByTagName('button')[1]
-    .addEventListener('click', (e)=> {
+    .addEventListener('click', (e) => {
         const cantidadElement = e.target.parentElement.getElementsByClassName('cantidad')[0];
         cantidadElement.innerText = agregarAlCarrito(producto);
         actualizarTotales()
-    }); 
-});
+        }); 
+    });
 }
 revisarMensajeVacio()
 actualizarTotales()
@@ -54,22 +52,22 @@ function actualizarTotales(){
     const productos = JSON.parse(localStorage.getItem('recetas'));
     let cantidad = 0;
     let precio = 0;
-    if(productos && productos.length > 0){
+    if(productos && productos.length > 0) {
         productos.forEach((producto) =>{
             cantidad += producto.cantidad;
-            precio+= producto.precio*producto.cantidad;
-        })
+            precio += producto.precio*producto.cantidad;
+        });
     }
-    cantidadElement.innerText=cantidad;
-    precioElement.innerText=precio;
+    cantidadElement.innerText = cantidad;
+    precioElement.innerText = precio;
     if(precio === 0){
         reiniciarCarrito();
         revisarMensajeVacio();
     }
 }
 
-document.getElementById('reiniciar').addEventListener('click', () =>{
-    contenedorTarjetas.innerHTML = "";
+document.getElementById('reiniciar').addEventListener('click', () => {
+    contenedorTarjetas.innerHTML = '';
     reiniciarCarritoVacio();
     revisarMensajeVacio();
 });
