@@ -14,11 +14,11 @@ function crearTarjetasProductosInicio(recetas){
     });
 }
 
-//crearTarjetasProductosInicio(productos);
+
 
 fetch("../db/db.json")
 .then(res=>res.json())
-.then(data=>{
+.then(data =>{
     const {recetas}= data;
     crearTarjetasProductosInicio(recetas);
-})
+});
