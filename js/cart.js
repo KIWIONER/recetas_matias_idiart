@@ -28,6 +28,7 @@ function crearTarjetasProductosCarrito(){
             const cantidadElement = e.target.parentElement.getElementsByClassName("cantidad")[0];
             cantidadElement.innerText = restarAlCarrito(producto);
             crearTarjetasProductosCarrito();
+            
             actualizarTotales();
         });
     nuevaReceta
@@ -67,10 +68,36 @@ function actualizarTotales(){
 }
 
 document.getElementById('reiniciar').addEventListener('click', () => {
+    Swal.fire({
+        title: "Haz vaciado el carrito",
+        text: "Te esperamos nuevamente",
+        icon: "warning"
+    });
     contenedorTarjetas.innerHTML = '';
-    reiniciarCarritoVacio();
+    reiniciarCarrito();
     revisarMensajeVacio();
 });
+
+document.getElementById('comprar').addEventListener('click',()=>{
+    if(agregarAlCarrito('recetas') > 0){
+    Swal.fire({
+        title: "Gracias por comprar con nosotros",
+        text: "Te esperamos nuevamente",
+        icon: "success"
+    });
+    }else{
+        Swal.fire({
+            title: "El carrito está vacío",
+            text: "Agrega al menos un producto",
+            icon: "warnning"
+        });
+    }
+    contenedorTarjetas.innerHTML = '';
+    
+    reiniciarCarrito();
+    actualizarTotales()
+    revisarMensajeVacio();
+})
 
 //Muestra o esconde el mensaje de que no hay nada en el carrito
 

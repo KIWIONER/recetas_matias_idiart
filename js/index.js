@@ -1,6 +1,6 @@
 const contenedorTarjetas = document.getElementById('productos-container')
 
-function crearTarjetasProductosInicio(productos){
+function crearTarjetasProductosInicio(recetas){
     recetas.forEach(producto => {
         const nuevaReceta= document.createElement('div');
         nuevaReceta.classList = 'tarjeta-producto';
@@ -14,4 +14,11 @@ function crearTarjetasProductosInicio(productos){
     });
 }
 
-crearTarjetasProductosInicio(recetas);
+//crearTarjetasProductosInicio(productos);
+
+fetch("../db/db.json")
+.then(res=>res.json())
+.then(data=>{
+    const {recetas}= data;
+    crearTarjetasProductosInicio(recetas);
+})

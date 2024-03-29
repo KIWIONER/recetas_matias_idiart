@@ -1,6 +1,5 @@
 const cuentaCarritoElement = document.getElementById('cuenta-carrito');
 
-
 //Toma un objeto producto o un objeto con al menos un id y lo agrega al carrito
 function agregarAlCarrito(producto){
     //reviso si el producto está en el carrito
@@ -25,6 +24,7 @@ function agregarAlCarrito(producto){
             //SI el producto está en el carrito le agrego 1 a la cantidad.
             nuevaMemoria[indiceProducto].cantidad++;
             cantidadProductoFinal = nuevaMemoria[indiceProducto].cantidad;
+            
         }
         localStorage.setItem('recetas',JSON.stringify(nuevaMemoria));
         actualizarNumeroCarrito();
